@@ -16,7 +16,7 @@ requirejs(['ext_editor_io', 'jquery_190'],
                     return;
                 }
                 var expl = data.ext.explanation;
-                $expl.addClass('error').addClass('output').html(expl);
+                $expl.addClass('output').html(expl);
             },
         });
         io.start();
