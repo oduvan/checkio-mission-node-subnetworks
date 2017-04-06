@@ -8,9 +8,16 @@ requirejs(['ext_editor_io', 'jquery_190'],
         var io = new extIO({
             multipleArguments: true,
             functions: {
-                js: 'sumTwo',
-                python: 'sum_two'
-            }
+                js: 'subnetworks',
+                python: 'subnetworks'
+            },
+            animation: function($expl, data){
+                if (!data.ext || !data.ext.explanation) {
+                    return;
+                }
+                var expl = data.ext.explanation;
+                $expl.addClass('error').addClass('output').html(expl);
+            },
         });
         io.start();
     }

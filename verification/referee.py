@@ -38,8 +38,8 @@ api.add_listener(
     CheckiOReferee(
         tests=TESTS,
         function_name={
-            "python": "sum_two",
-            "js": "sumTwo"
+            "python": "subnetworks",
+            "js": "subnetworks"
         },
         cover_code={
             'python-27': cover_codes.unwrap_args,

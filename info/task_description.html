@@ -1,46 +1,37 @@
 <p>
-    <i>( Describe task in general )</i>
+    You should find out how many disconnected subnetworks you have after crushing several nodes in the network
 </p>
 
 <p>
-    Sum two passed ints
-</p>
-
-<p style="text-align: center;">
-    <img  title="example" src="{{MEDIA}}example.png" alt="example" style="max-height: 83px"/>
-</p>
-
-<p><i>( Explain input and output values )</i></p>
-<p>
-    <strong>Input: </strong> Two arguments. Both are int
+    <strong>Input: </strong> Two arguments. Network structure (as list of connections between nodes) and list of crashed nodes
 </p>
 
 <p>
-    <strong>Output: </strong> Int. 
+    <strong>Output: </strong> Int. The amount of subnetworks after crushing nodes.
 </p>
 
 
 
 <div class="for_info_only">
-    <p><i>( Put some usage examples )</i></p>
     <p>
         <strong>Example:</strong>
     </p>
-<pre class="brush: python">{% if interpreter.slug == "js-node" %}
-sumTwo(2, 3) == 5
-sumTwo(5, 7) == 12
-{% else %}
-sum_two(2, 3) == 5
-sum_two(5, 7) == 12
-{% endif %}</pre>
+<pre class="brush: python">
+subnetworks([
+        ['A', 'B'],
+        ['B', 'C'],
+        ['C', 'D']
+    ], ['B']) == 2
+subnetworks([
+        ['A', 'B'],
+        ['A', 'C'],
+        ['A', 'D'],
+        ['D', 'F']
+    ], ['A']) == 3
+subnetworks([
+        ['A', 'B'],
+        ['B', 'C'],
+        ['C', 'D']
+    ], ['C', 'D']) == 1
+</pre>
 </div>
-
-<p class="for_info_only">
-    <strong>How it is used: </strong>
-    <i>(Here you can explain how it can be used in development and what is usage of this.)</i>
-</p>
-
-<p>
-    <strong>Precondition:</strong>
-    <i>Constraints for Input</i>
-</p>

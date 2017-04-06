@@ -11,26 +11,45 @@ Each test is dict with
 TESTS = {
     "Basics": [
         {
-            "input": [3, 2],
-            "answer": 5,
-            "explanation": "3+2=?"
+            "input": [[
+                        ['A', 'B'],
+                        ['B', 'C'],
+                        ['C', 'D']
+                    ], ['B']],
+            "answer": 2,
+            "explanation": "One crushed server in the middle separates network on two subnetworks"
         },
         {
-            "input": [5, 7],
-            "answer": 12,
-            "explanation": "5+7=?"
+            "input": [[
+                        ['A', 'B'],
+                        ['A', 'C'],
+                        ['A', 'D'],
+                        ['D', 'F']
+                    ], ['A']],
+            "answer": 3,
+            "explanation": "crushed server has 3 connected server to it, so it can potentially seporate on 3 subnetworks"
+        },
+        {
+            "input": [[
+                        ['A', 'B'],
+                        ['B', 'C'],
+                        ['C', 'D']
+                    ], ['C', 'D']],
+            "answer": 1,
+            "explanation": "Those two crushed servers are in the end of connection line so they doesn't separate anything"
         }
     ],
     "Extra": [
         {
-            "input": [6, 3],
-            "answer": 9,
-            "explanation": "6+3=?"
-        },
-        {
-            "input": [6, 7],
-            "answer": 13,
-            "explanation": "6+7=?"
+            "input": [[
+                        ['A', 'B'],
+                        ['A', 'C'],
+                        ['A', 'D'],
+                        ['D', 'F'],
+                        ['B', 'C']
+                    ], ['A']],
+            "answer": 2,
+            "explanation": "crushed server has 3 connected server to it, but 2 of them are connected so they are still in one network"
         }
     ]
 }
